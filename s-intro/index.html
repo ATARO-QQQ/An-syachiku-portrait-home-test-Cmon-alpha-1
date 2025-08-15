@@ -12,6 +12,36 @@
   <link rel="stylesheet" href="https://ataro-qqq.github.io/An-syachiku-portrait-home-test-Cmon-alpha-1/css/style.css">
 </head>
 <body>
-  
+  <!-- 固定ヘッダー -->
+  <header class="site-header" id="siteHeader" role="banner" aria-label="サイトヘッダー">
+    <div class="header-inner">
+      <a class="brand" href="/">MySite</a>
+      <nav class="global-nav" aria-label="グローバルナビ">
+        <ul>
+          <li><a href="#sec1">セクション1</a></li>
+          <li><a href="#sec2">セクション2</a></li>
+          <li><a href="#sec3">セクション3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ヘッダー分の余白（JSなしで重なりを避ける用） -->
+  <div class="header-spacer" aria-hidden="true"></div>
+
+  <!-- コンテンツ -->
+  <main class="content">
+    <section id="sec1"><h2>セクション1</h2><p>ダミーテキスト…</p></section>
+    <section id="sec2"><h2>セクション2</h2><p>ダミーテキスト…</p></section>
+    <section id="sec3"><h2>セクション3</h2><p>ダミーテキスト…</p></section>
+    <!-- スクロール確認用に長めの内容 -->
+    <div class="filler">
+      <p>（スクロール確認用のダミーコンテンツが続きます）</p>
+      <p>…</p>
+    </div>
+  </main>
+
+  <script src="js/script.js" defer></script>
 </body>
+</html>
 </html>
