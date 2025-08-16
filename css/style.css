@@ -5,14 +5,12 @@ body {
 
 .site-header {
   position: fixed;
-  top: -35px; 
+  top: -35px; /* 初期は上に隠す */
   left: 0;
   width: 100%;
   height: 35px;
   background-color: #3C3C3C;
   color: white;
-  display: flex;
-  align-items: center;
   z-index: 1000;
   border-bottom: 1px solid #FFFFFF;
   transition: top 0.5s ease;
@@ -22,10 +20,11 @@ body {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 100%; 
+  height: 100%;
 }
 
-.menu-left, .menu-right {
+.menu-left,
+.menu-right {
   list-style: none;
   display: flex;
   margin: 0;
@@ -33,30 +32,47 @@ body {
   height: 100%;
 }
 
-.menu-left li, .menu-right li {
-  height: 100%; 
-  display: flex;
+.menu-left li,
+.menu-right li {
+  position: relative;  /* ← 疑似要素配置のため */
+  height: 100%;
+  display: block;
 }
 
-.menu-left li a, .menu-right li a {
+.menu-left li a,
+.menu-right li a {
+  display: block;
+  height: 100%;
+  padding: 0 15px;
+  line-height: 35px;
+  font-size: 14px;
   color: white;
   text-decoration: none;
-  padding: 0 15px;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  height: 100%; 
   transition: background-color 0.3s ease;
 }
 
-.menu-left li:not(:last-child) {
-  border-right: 1px solid rgba(255, 255, 255, 0.3);
+/* 区切り線（上下端に届かないように中央寄せ） */
+.menu-left li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 5px;              /* ← 上から少し余白 */
+  bottom: 5px;           /* ← 下から少し余白 */
+  right: 0;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
 }
-.menu-right li {
-  border-left: 1px solid rgba(255, 255, 255, 0.3);
+
+.menu-right li::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 0;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .menu-left li a:hover,
 .menu-right li a:hover {
-  background-color: #000080; 
+  background-color: #000080; /* ヘッダー全体に色がつく */
 }
