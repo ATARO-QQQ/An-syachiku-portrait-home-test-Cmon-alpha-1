@@ -29,6 +29,7 @@ body {
   display: flex;
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 .menu-left li, .menu-right li {
@@ -43,6 +44,7 @@ body {
   font-size: 14px;
   display: flex;
   align-items: center;
+  height: 100%;
   transition: background-color 0.3s ease;}
 
 .menu-left li:not(:last-child) {
